@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Backpressure/Backpressure.qml</file>
+        <file>Backpressure/qmldir</file>
+    </qresource>
+</RCC>

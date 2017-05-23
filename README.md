@@ -47,4 +47,4 @@ If will create a wrapper function of the callback. Whatever you have invoked the
 
 It will guarantee only the last function call and parameter will be passed to the callback.
 
-
+Reference: [ReactiveX - Debounce operator](http://reactivex.io/documentation/operators/debounce.html)

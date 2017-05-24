@@ -27,19 +27,20 @@ Example:
 
 Item {
   id : item
-  property var processClick : Backpressure.oneInTime(item, 500, function(value) { /* Callback */ });
+  property var processClick : Backpressure.oneInTime(item, 500, function(value) { 
+    /* Callback */ 
+  });
 
   MouseArea {
     onClicked: {
-       proessClick(value);
+       processClick(value);
     }
   }
 
 }
 ```
 
-If the owner is destroyed, the callback will be executed 
-
+If the owner is destroyed, the callback will no longer be able to access.
 
 **Backpressure.debounce(owner, duration, callback)**
 

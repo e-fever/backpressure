@@ -19,6 +19,7 @@ include($$ROOTDIR/backpressure.pri)
 DISTFILES +=     qpm.json     qmltests/tst_QmlTests.qml \
     qmltests/tst_BackPressure.qml \
     ../../appveyor.yml \
-    ../../.travis.yml
+    ../../.travis.yml \
+    ../../README.md
 
 HEADERS +=    

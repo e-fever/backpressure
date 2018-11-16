@@ -1,3 +1,6 @@
+[![Build Status](https://www.travis-ci.org/e-fever/backpressure.svg?branch=master)](https://www.travis-ci.org/e-fever/backpressure)
+[![Build status](https://ci.appveyor.com/api/projects/status/knt6r7gra9dm0oui?svg=true)](https://ci.appveyor.com/project/benlau/backpressure)
+
 Backpressure
 ============
 
@@ -49,3 +52,6 @@ If will create a wrapper function of the callback. Whatever you have invoked the
 It will guarantee only the last function call and parameter will be passed to the callback.
 
 Reference: [ReactiveX - Debounce operator](http://reactivex.io/documentation/operators/debounce.html)
+
+**Backpressure.promisedOneInTime(owner, callback)**
+

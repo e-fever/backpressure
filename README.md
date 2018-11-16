@@ -55,3 +55,26 @@ Reference: [ReactiveX - Debounce operator](http://reactivex.io/documentation/ope
 
 **Backpressure.promisedOneInTime(owner, callback)**
 
+This function is similar to oneInTime that will create a wrapper of the callback. But it does not take a timeout value as an argument of the construction function.
+
+Instead, it will convert the return from the callback to a promise object. Then blocks successively calls until the promise is resolved/rejected.
+
+The wrapper function returns a promise represents the result of the callback. If that is blocked, it will simply a rejected promise.
+
+You must install QuickPromise in order to use this funciton.
+
+Example
+```
+
+var timeout = Backpressure.promisedOneInTime(anyItem, function(delay) {
+    return Q.promise(function(fulfill, reject) {
+        Q.setTimeout(function() {
+            fulfill();
+        }, delay);
+    });
+});
+
+var promise1 = timeout(1000); // Pending
+var promise2 = timeout(1000); // Rejected
+
+```

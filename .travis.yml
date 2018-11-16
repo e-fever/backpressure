@@ -14,4 +14,3 @@ before_install:
 script:
     - source qt-5.7.env
     - (mkdir build; cd build; run-unittests ../tests/backpressureunittests/backpressureunittests.pro)
-    - (cd examples/todo; cmake . ; make)

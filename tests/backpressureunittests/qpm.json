@@ -1,11 +1,7 @@
 {
-  "name": "",
-  "description": "",
   "dependencies": [
     "com.github.benlau.testable@1.0.2.19",
-    "com.github.benlau.qtshell@0.4.2"
-  ],
-  "license": "NONE",
-  "pri_filename": "",
-  "webpage": ""
+    "com.github.benlau.qtshell@0.4.2",
+    "com.github.benlau.quickpromise@1.0.8"
+  ]
 }

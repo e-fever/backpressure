@@ -62,6 +62,29 @@ Item {
         }
     }
 
+    function promisedOneInTime(owner, callback) {
+        var q = priv.loadPromiseLib();
+        var promise = null;
+
+        return function() {
+            var args = arguments;
+            if (promise !== null) {
+                return q.rejected();
+            }
+
+            promise = q.promise(function(fulfill, reject) {
+                fulfill(callback.apply(null, args));
+            });
+
+            promise.then(function() {
+                promise = null;
+            }, function() {
+                promise = null;
+            });
+            return promise;
+        };
+    }
+
     function debounce(owner, duration, callback) {
         var timerId = null;
 
@@ -77,6 +100,24 @@ Item {
                 callback.apply(null, args);
             });
         }
+    }    
+
+    QtObject {
+        id: priv
+        property var q: null
+
+        function loadPromiseLib() {
+            if (q !== null) {
+                return q.q;
+            }
+
+            q = Qt.createQmlObject('import QtQuick 2.0; import QuickPromise 1.0; Item { property var q: Q;}', backpressure);
+            if (q.hasOwnProperty("qmlErrors")) {
+                console.error("Backpressure: Failed to load QuickPromise. Please check your installation.");
+            }
+            return q.q;
+        }
+
     }
 
 }

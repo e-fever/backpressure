@@ -2,6 +2,7 @@
   "dependencies": [
     "com.github.benlau.testable@1.0.2.19",
     "com.github.benlau.qtshell@0.4.2",
-    "com.github.benlau.quickpromise@1.0.8"
+    "com.github.benlau.quickpromise@1.0.8",
+    "net.efever.xbacktrace@0.0.1"
   ]
 }
